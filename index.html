@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트레이닝5</title>
+
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -21,6 +25,9 @@
         for(let i = 0; i < allSmallBox; i++){
             const small_div = document.createElement("div");
             small_div.textContent = count+i;
+            small_div.style.width = "40px";
+            small_div.style.height = "40px";
+            small_div.style.border = "1px solid black"
             Area1_1.appendChild(small_div);
         }
 
