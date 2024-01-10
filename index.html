@@ -18,6 +18,8 @@
         const count = 1;
         const smallbox = [{box : "11"}];
         const allSmallBox = Number(smallbox[0].box);
+        const small_div_style = [{width : 40}, {height : 40}, {border : "1px solid black"}]
+        const pixel = "px";
 
         const Area1_1 = document.createElement("div");
         Area1.appendChild(Area1_1);
@@ -25,9 +27,9 @@
         for(let i = 0; i < allSmallBox; i++){
             const small_div = document.createElement("div");
             small_div.textContent = count+i;
-            small_div.style.width = "40px";
-            small_div.style.height = "40px";
-            small_div.style.border = "1px solid black"
+            small_div.style.width = small_div_style[0].width + pixel;
+            small_div.style.height = small_div_style[1].height + pixel;
+            small_div.style.border = small_div_style[2].border;
             Area1_1.appendChild(small_div);
         }
 
