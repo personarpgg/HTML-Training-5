@@ -18,6 +18,12 @@
         const Area1_1 = document.createElement("div");
         Area1.appendChild(Area1_1);
 
+        for(let i = 0; i < allSmallBox; i++){
+            const small_div = document.createElement("div");
+            count = count + 1;
+            small_div.textContent = count;
+            Area1_1.appendChild(small_div);
+        }
 
     </script>
 </body>
