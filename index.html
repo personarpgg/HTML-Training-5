@@ -11,7 +11,7 @@
     <div id="root"></div>
     <script>
         const Area1 = document.getElementById("root");
-        const count = 0;
+        const count = 1;
         const smallbox = [{box : "11"}];
         const allSmallBox = Number(smallbox[0].box);
 
@@ -20,8 +20,7 @@
 
         for(let i = 0; i < allSmallBox; i++){
             const small_div = document.createElement("div");
-            count = count + 1;
-            small_div.textContent = count;
+            small_div.textContent = count+i;
             Area1_1.appendChild(small_div);
         }
 
