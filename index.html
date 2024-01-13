@@ -27,7 +27,6 @@
 
         // 뒷판
         const pixel = "px";
-        Area1.style.display = "flex";
 
         // div 스타일 div 생성
         const Area1_1 = document.createElement("div");
@@ -37,21 +36,21 @@
         Area1.appendChild(Area1_1);
 
         const Area1_2 = document.createElement("div");
-        Area1_2.style = "absolute";
-        Area1_2.style.top = big_div_style[0].width + pixel; //600px
-        Area1_2.style.left = big_div_style[1].height + pixel; //600px
+        Area1_2.style.position = "absolute";
+        Area1_2.style.top = "80px"; // 수정된 부분
+        Area1_2.style.left = "150px"; // 수정된 부분
         Area1.appendChild(Area1_2);
 
         const Area1_3_1 = document.createElement("div");
-        Area1_3_1.style = "absolute";
-        Area1_3_1.style.top = middle_div_style[0].width + pixel; //300px
-        Area1_3_1.style.left = middle_div_style[1].height + pixel; //300px
+        Area1_3_1.style.position = "absolute";
+        Area1_3_1.style.top = 0; //300px
+        Area1_3_1.style.left =  big_div_style[1].height - middle_div_style[1].height + pixel; //300px
         Area1_2.appendChild(Area1_3_1);
 
         const Area1_3_2 = document.createElement("div");
-        Area1_3_2.style = "absolute";
+        Area1_3_2.style.position = "absolute";
         Area1_3_2.style.top = big_div_style[0].width - middle_div_style[0].width + pixel; //600px - 300px = 300px
-        Area1_3_2.style.left = big_div_style[1].height - middle_div_style[1].height + pixel; //600px - 300px = 300px
+        Area1_3_2.style.left = 0; //600px - 300px = 300px
         Area1_2.appendChild(Area1_3_2);
 
         // Area1
@@ -65,14 +64,24 @@
             Area1_1.appendChild(small_div);
         }
 
+        // Area2
+        for (let i = 0; i < Number(bigbox[0].box); i++) {
+            const big_div = document.createElement("div");
+            big_div.textContent = count + i;
+            big_div.style.width = big_div_style[0].width + pixel;
+            big_div.style.height = big_div_style[1].height + pixel;
+            big_div.style.backgroundColor = big_div_style[3].BGC;
+            Area1_2.appendChild(big_div);
+        }
+
         // Area3
         for (let i = 0; i < Number(middle[0].box); i++) {
             const middle_div = document.createElement("div");
             middle_div.textContent = count + i;
-            middle_div.style.margin = "75px 10px 10px 50px";
             middle_div.style.width = middle_div_style[0].width + pixel;
             middle_div.style.height = middle_div_style[1].height + pixel;
             middle_div.style.backgroundColor = middle_div_style[3].BGC;
+            //middle div 조건 분기
             if (i === 0) {
                 Area1_3_1.appendChild(middle_div);
             } else if (i === 1) {
@@ -80,16 +89,6 @@
             }
         }
 
-        // Area2
-        for (let i = 0; i < Number(bigbox[0].box); i++) {
-            const big_div = document.createElement("div");
-            big_div.textContent = count + i;
-            big_div.style.margin = "75px 10px 10px 150px";
-            big_div.style.width = big_div_style[0].width + pixel;
-            big_div.style.height = big_div_style[1].height + pixel;
-            big_div.style.backgroundColor = big_div_style[3].BGC;
-            Area1_2.appendChild(big_div);
-        }
     </script>
 </body>
 
