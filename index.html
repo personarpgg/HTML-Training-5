@@ -24,45 +24,51 @@
         const small_div_style = [{width : 40}, {height : 40}, {border : "1px solid black"}, {BGC :"#D9D9D9"}]
 
         
-        const bigbox = [{box : "5"}];
-        const big_div_style = [{width : 40}, {height : 40}, {border : "1px solid black"}, {BGC :"#D9D9D9"}]
+        const bigbox = [{box : "1"}];
+        const big_div_style = [{width : 800}, {height : 800}, {border : "1px solid black"}, {BGC :"#D9D9D9"}]
 
         const pixel = "px";
         Area1.style.display = "flex";
         
 
         const Area1_1 = document.createElement("div");
-        Area1_1.style.position = "absolute"
+        Area1_1.style.position = "absolute";
         Area1_1.style.top = small_div_style[0].width + pixel; //139px
         Area1_1.style.left = small_div_style[1].height + pixel; //423px
 
         Area1.appendChild(Area1_1);
 
+        const Area1_2 = document.createElement("div");
+        Area1_2.style = "absolute";
+        Area1_2.style.top = big_div_style[0].width + pixel; //139px
+        Area1_2.style.left = big_div_style[1].height + pixel; //423px
+
+        Area1.appendChild(Area1_2);
+
         for(let i = 0; i < Number(smallbox[0].box); i++){
             const small_div = document.createElement("div");
             small_div.textContent = count+i;
+            small_div.style.margin = "20px";
             small_div.style.width = small_div_style[0].width + pixel;
             small_div.style.height = small_div_style[1].height + pixel;
-            small_div.style.border = small_div_style[2].border;
-            small_div.style.backgroundColor = small_div_style[3].BGC;
-            Area1_1.appendChild(small_div);
-        }
-
-        const Area1_2 = document.createElement("div");
-        Area1.appendChild(Area1_2);
-        for(let i = 0; i < Number(bigbox[0].box); i++){
-            const bit = document.createElement("div");
-            small_div.textContent = count+i;
-            small_div.style.width = small_div_style[0].width + pixel;
-            small_div.style.height = small_div_style[1].height + pixel;
-            small_div.style.border = small_div_style[2].border;
+            // small_div.style.border = small_div_style[2].border;
             small_div.style.backgroundColor = small_div_style[3].BGC;
             Area1_1.appendChild(small_div);
         }
 
 
-        
 
+        // //Area2
+        // for(let i = 0; i < Number(bigbox[0].box); i++){
+        //     const small_div = document.createElement("div");
+        //     small_div.textContent = count+i;
+        //     small_div.style.margin = "20px";
+        //     small_div.style.width = small_div_style[0].width + pixel;
+        //     small_div.style.height = small_div_style[1].height + pixel;
+        //     // small_div.style.border = small_div_style[2].border;
+        //     small_div.style.backgroundColor = small_div_style[3].BGC;
+        //     Area1_1.appendChild(small_div);
+        // }
 
 
     </script>
