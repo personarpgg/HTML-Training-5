@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트레이닝5</title>
 
-    <style>
-        #root{
-            position:fixed;
-
-        }
-    </style>
 </head>
 
 <body>
+
     <div id="root"></div>
+
     <script>
         const Area1 = document.getElementById("root");
         const count = 1;
@@ -25,7 +21,7 @@
 
         
         const bigbox = [{box : "1"}];
-        const big_div_style = [{width : 800}, {height : 800}, {border : "1px solid black"}, {BGC :"#D9D9D9"}]
+        const big_div_style = [{width : 600}, {height : 600}, {border : "1px solid black"}, {BGC :"#D9D9D9"}]
 
         const pixel = "px";
         Area1.style.display = "flex";
@@ -40,11 +36,12 @@
 
         const Area1_2 = document.createElement("div");
         Area1_2.style = "absolute";
-        Area1_2.style.top = big_div_style[0].width + pixel; //139px
-        Area1_2.style.left = big_div_style[1].height + pixel; //423px
+        Area1_2.style.top = big_div_style[0].width + pixel; //800px
+        Area1_2.style.left = big_div_style[1].height + pixel; //800px
 
         Area1.appendChild(Area1_2);
 
+        //Area1
         for(let i = 0; i < Number(smallbox[0].box); i++){
             const small_div = document.createElement("div");
             small_div.textContent = count+i;
@@ -56,19 +53,17 @@
             Area1_1.appendChild(small_div);
         }
 
-
-
-        // //Area2
-        // for(let i = 0; i < Number(bigbox[0].box); i++){
-        //     const small_div = document.createElement("div");
-        //     small_div.textContent = count+i;
-        //     small_div.style.margin = "20px";
-        //     small_div.style.width = small_div_style[0].width + pixel;
-        //     small_div.style.height = small_div_style[1].height + pixel;
-        //     // small_div.style.border = small_div_style[2].border;
-        //     small_div.style.backgroundColor = small_div_style[3].BGC;
-        //     Area1_1.appendChild(small_div);
-        // }
+        //Area2
+        for(let i = 0; i < Number(bigbox[0].box); i++){
+            const big_div = document.createElement("div");
+            big_div.textContent = count+i;
+            big_div.style.margin = "75px 10px 10px 150px";
+            big_div.style.width = big_div_style[0].width + pixel;
+            big_div.style.height = big_div_style[1].height + pixel;
+            // small_div.style.border = small_div_style[2].border;
+            big_div.style.backgroundColor = big_div_style[3].BGC;
+            Area1_2.appendChild(big_div);
+        }
 
 
     </script>
